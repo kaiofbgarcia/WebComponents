@@ -1,0 +1,198 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #121212;
+    color: #fff;
+}
+// Para ver as bordas dos elementos
+.border {
+    border: 1px solid red;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
+    height: 100%;
+    padding: 40px 10px 30px 10px;
+    border-right: 1px solid #2f3336;
+    transition: all 0.3s;
+}
+
+.sidebar-header{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.logo-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 15px;
+    transition: transform 0.4s;
+}
+
+.logo-img:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.sidebar button{
+    height: 60px;
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+
+.sidebar button > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0px 16px 0px 16px;
+    border-radius: 14px;
+    line-height: 1;
+    transition: all 0.3s;
+}
+
+.sidebar button:hover > span {
+    background: #2f3336;
+}
+
+.sidebar button i {
+    position: relative;
+    font-size: 28px;
+    transition: 0.2s;
+}
+
+.sidebar button span{
+    font-size: 16px;
+}
+
+.sidebar > nav {
+    flex: 1 1 auto;
+}
+
+.main {
+    margin-left: 250px;
+    padding: 40px 30px 30px 30px;
+    transition: all 0.3s;
+}
+
+.main h1{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: #2f3336;
+}
+
+.main span{
+    text-align: center;
+    display: block;
+    color: #4e555a;
+    font-weight: bold;
+}
+
+/* Ajustar a sidebar com apenas os icones */
+
+@media (width < 683px) {
+    .sidebar {
+        width: 72px;
+    }
+    .sidebar button > span {
+       width: 48px;
+    }
+    .sidebar button > span > span {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .main{
+        margin-left: 78px;
+        transition: margin 0.3s;
+    }
+}
+
+.btn-mobile{
+    display: none;
+    align-self: flex-start;
+    align-items: center;
+    margin: 16px;
+    background: transparent;
+    color: #fff;
+    border: 0;
+}
+
+.btn-mobile span{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.btn-close span i{
+    font-size: 32px;
+}
+
+.menu-mobile{
+    display: none;
+}
+
+.menu-mobile-active{
+    width: 100vw;
+    height: 100vh;
+    background: #121212;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.menu-mobile-active button{
+    background: transparent;
+    border: 0;
+    color: inherit;
+    margin-bottom: 16px;
+}
+
+.menu-mobile-active button > span{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-text{
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+@media (max-width: 480px){
+    .sidebar{
+        display: none;
+    }
+    .btn-mobile{
+        display: flex;
+    }
+    .main{
+        margin-left: 6px;
+    }
+}
